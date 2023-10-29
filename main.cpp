@@ -1,8 +1,7 @@
 #include <iostream>
+#include <utility>
 #include <vector>
 #include <string>
-#include <ctime>
-#include <cstdlib>
 #include <map>
 
 class Obiect {
@@ -11,9 +10,10 @@ private:
     bool folosit;
 
 public:
-    Obiect(const std::string &n) : nume(n), folosit(false) {}
+    Obiect(std::string n) : nume(std::move(n)), folosit(false) {}
 
     Obiect(const Obiect &other) : nume(other.nume), folosit(other.folosit) {}
+
 
     Obiect &operator=(const Obiect &other) {
         if (&other == this)
@@ -23,7 +23,7 @@ public:
         return *this;
     }
 
-    ~Obiect() {}
+    ~Obiect() = default;
 
     friend std::ostream &operator<<(std::ostream &os, const Obiect &obj) {
         os << obj.nume;
@@ -38,11 +38,11 @@ public:
             std::cout << nume << " a fost deja folosit." << std::endl;
     }
 
-    bool aFostFolosit() const {
+    [[nodiscard]] bool aFostFolosit() const {
         return folosit;
     }
 
-    const std::string &getnume() const {
+    [[nodiscard]] const std::string &getnume() const {
         return nume;
     }
 };
@@ -52,7 +52,7 @@ private:
     std::string nume;
 
 public:
-    Personaj(const std::string &n) : nume(n) {}
+    explicit Personaj(const std::string &n) : nume(n) {}
 
     Personaj(const Personaj &other) : nume(other.nume) {}
 
@@ -64,14 +64,14 @@ public:
         return *this;
     }
 
-    ~Personaj() {}
+    ~Personaj() = default;
 
     friend std::ostream &operator<<(std::ostream &os, const Personaj &personaj) {
         os << personaj.nume;
         return os;
     }
 
-    const std::string &getNume() const {
+    [[nodiscard]] const std::string &getNume() const {
         return nume;
     }
 
@@ -100,27 +100,27 @@ public:
         return *this;
     }
 
-    ~Locatie() {}
+    ~Locatie() = default;
 
     friend std::ostream &operator<<(std::ostream &os, const Locatie &locatie) {
         os << locatie.nume;
         return os;
     }
 
-    const std::string &getNume() const {
+    [[nodiscard]] const std::string &getNume() const {
         return nume;
     }
 
-    const std::string &getDescriere() const {
+    [[nodiscard]] const std::string &getDescriere() const {
         return descriere;
     }
 
-    const std::vector<std::string> &getProvocariLocatie() const {
+    [[nodiscard]] const std::vector<std::string> &getProvocariLocatie() const {
         return provocariLocatie;
     }
 
     void adaugaProvocare(const std::string &provocare) {
-        provocariLocatie.push_back(provocare);
+        provocariLocatie.emplace_back(provocare);
     }
 };
 
@@ -134,22 +134,22 @@ private:
 
 public:
     Joc() {
-        obiecte.push_back(Obiect("Lanterna"));
-        obiecte.push_back(Obiect("Cheie"));
-        obiecte.push_back(Obiect("Trusa de prim ajutor"));
-        obiecte.push_back(Obiect("Franghie"));
-        obiecte.push_back(Obiect("Arma"));
-        obiecte.push_back(Obiect("Pietre pretioase"));
+        obiecte.emplace_back("Lanterna");
+        obiecte.emplace_back("Cheie");
+        obiecte.emplace_back("Trusa de prim ajutor");
+        obiecte.emplace_back("Franghie");
+        obiecte.emplace_back("Arma");
+        obiecte.emplace_back("Pietre pretioase");
 
-        personaje.push_back(Personaj("Vrajitor"));
-        personaje.push_back(Personaj("Explorator"));
-        personaje.push_back(Personaj("Vanator"));
-        personaje.push_back(Personaj("Animal"));
+        personaje.emplace_back("Vrajitor");
+        personaje.emplace_back("Explorator");
+        personaje.emplace_back("Vanator");
+        personaje.emplace_back("Animal");
 
-        locatii.push_back(Locatie("Padure", "O padure misterioasa cu copaci inalti."));
-        locatii.push_back(Locatie("Pestera", "O pestera intunecata si inspaimantatoare."));
-        locatii.push_back(Locatie("Munte", "Varful unui munte inzapezit."));
-        locatii.push_back(Locatie("Oras", "Un oras in ruina si pustiu."));
+        locatii.emplace_back("Padure", "O padure misterioasa cu copaci inalti.");
+        locatii.emplace_back("Pestera", "O pestera intunecata si inspaimantatoare.");
+        locatii.emplace_back("Munte", "Varful unui munte inzapezit.");
+        locatii.emplace_back("Oras", "Un oras in ruina si pustiu.");
 
         personajeInLocatii["Padure"] = {personaje[0], personaje[3]};
         personajeInLocatii["Pestera"] = {personaje[2]};
@@ -209,12 +209,12 @@ public:
                 return obj;
             }
         }
-        return Obiect("obj");
+        return {"obj"};
     }
 };
 
 int main() {
-    srand(static_cast<unsigned>(time(0)));
+
 
     Joc aventura;
 
@@ -237,7 +237,7 @@ int main() {
             std::string locatie;
             std::cin >> locatie;
             aventura.scrieProvocariInLocatie(locatie);
-        } else if (comanda == "") {
+        } else if (comanda == "obiect") {
             std::cout << "Ce obiect vrei sa folosesti?: ";
             std::string obiect;
             std::cin >> obiect;
@@ -253,4 +253,3 @@ int main() {
 
     return 0;
 }
-
