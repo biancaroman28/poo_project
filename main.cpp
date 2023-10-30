@@ -10,7 +10,7 @@ private:
     bool folosit;
 
 public:
-    Obiect(std::string n) : nume(std::move(n)), folosit(false) {}
+    explicit Obiect(std::string n) : nume(std::move(n)), folosit(false) {}
 
     Obiect(const Obiect &other) : nume(other.nume), folosit(other.folosit) {}
 
@@ -47,6 +47,7 @@ public:
     }
 };
 
+
 class Personaj {
 private:
     std::string nume;
@@ -73,10 +74,6 @@ public:
 
     [[nodiscard]] const std::string &getNume() const {
         return nume;
-    }
-
-    void vorbeste() const {
-        std::cout << nume << " iti spune: 'Bine ai venit.' " << std::endl;
     }
 };
 
@@ -156,7 +153,6 @@ public:
         personajeInLocatii["Munte"] = {personaje[1]};
         personajeInLocatii["Oras"] = {personaje[0], personaje[2]};
 
-        // Adaugăm provocările în locații
         locatii[0].adaugaProvocare("Monstru din Padure");
         locatii[1].adaugaProvocare("Labirint din Pestera");
     }
@@ -209,7 +205,6 @@ public:
                 return obj;
             }
         }
-        return {"obj"};
     }
 };
 
