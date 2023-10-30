@@ -1,8 +1,10 @@
+
 #include <iostream>
 #include <utility>
 #include <vector>
 #include <string>
 #include <map>
+
 
 class Obiect {
 private:
@@ -10,7 +12,9 @@ private:
     bool folosit;
 
 public:
-    explicit Obiect(std::string n) : nume(std::move(n)), folosit(false) {}
+
+    Obiect(std::string n) : nume(std::move(n)), folosit(false) {}
+
 
     Obiect(const Obiect &other) : nume(other.nume), folosit(other.folosit) {}
 
@@ -23,12 +27,15 @@ public:
         return *this;
     }
 
+
     ~Obiect() = default;
+
 
     friend std::ostream &operator<<(std::ostream &os, const Obiect &obj) {
         os << obj.nume;
         return os;
     }
+
 
     void obiectFolosit() {
         if (!folosit) {
@@ -38,9 +45,11 @@ public:
             std::cout << nume << " a fost deja folosit." << std::endl;
     }
 
+
     [[nodiscard]] bool aFostFolosit() const {
         return folosit;
     }
+
 
     [[nodiscard]] const std::string &getnume() const {
         return nume;
@@ -53,6 +62,7 @@ private:
     std::string nume;
 
 public:
+
     explicit Personaj(const std::string &n) : nume(n) {}
 
     Personaj(const Personaj &other) : nume(other.nume) {}
@@ -75,6 +85,10 @@ public:
     [[nodiscard]] const std::string &getNume() const {
         return nume;
     }
+
+    void vorbeste() const {
+        std::cout << nume << " iti spune: 'Bine ai venit.' " << std::endl;
+    }
 };
 
 class Locatie {
@@ -84,6 +98,7 @@ private:
     std::vector<std::string> provocariLocatie;
 
 public:
+
     Locatie(const std::string &n, const std::string &desc) : nume(n), descriere(desc) {}
 
     Locatie(const Locatie &other) : nume(other.nume), descriere(other.descriere) {}
@@ -205,12 +220,11 @@ public:
                 return obj;
             }
         }
+        return {"obj"};
     }
 };
 
 int main() {
-
-
     Joc aventura;
 
     while (true) {
