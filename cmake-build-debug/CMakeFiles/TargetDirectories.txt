@@ -1,0 +1,3 @@
+C:/Users/win10/CLionProjects/tema_poo/cmake-build-debug/CMakeFiles/tema_poo.dir
+C:/Users/win10/CLionProjects/tema_poo/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/win10/CLionProjects/tema_poo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
