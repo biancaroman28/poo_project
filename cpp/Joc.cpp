@@ -36,7 +36,6 @@ void Joc::scrieLocatii() {
     }
     std::cout << std::endl;
 }
-
 /*
 void Joc::scrieObiecte() {
     std::cout<<"Obiecte disponibile: ";
@@ -80,14 +79,17 @@ void Joc::scrieProvocariInLocatie(const std::string &locatie) {
 
 
 std::unique_ptr<Obiect> Joc::iaObiect(const std::string &objectnume) {
-    for (auto &obj: obiecte) {
-        if (!obj->aFostFolosit() && obj->getNume() == objectnume) {
+    for (auto it = obiecte.begin(); it != obiecte.end(); ++it) {
+        if (!(*it)->aFostFolosit() && (*it)->getNume() == objectnume) {
+            auto obj = std::move(*it); // Transfer ownership using std::move
+            obiecte.erase(it); // Remove the object from the vector
             obj->obiectFolosit();
-            return std::move(obj);
+            return obj; // Return the moved unique_ptr
         }
     }
     throw ObiectNegasitException();
 }
+
 
 const std::vector<std::unique_ptr<Obiect>> &Joc::getObiecte() const {
     return obiecte;
@@ -100,7 +102,6 @@ const std::vector<std::unique_ptr<Locatie>> &Joc::getLocatii() const {
 const std::vector<std::unique_ptr<Personaj>> &Joc::getPersonaje() const {
     return personaje;
 }
-
 int Joc::numarVieti = 3; // Inițializarea numărului de vieți
 
 int Joc::genereazaSanatate() {

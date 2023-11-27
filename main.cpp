@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime> // Pentru srand
 
-#include "Joc.h"
+#include "headers/Joc.h"
 
 int main() {
     srand(static_cast<unsigned int>(time(nullptr))); // Inițializăm generatorul de numere aleatoare

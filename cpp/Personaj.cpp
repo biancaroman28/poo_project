@@ -1,5 +1,5 @@
-#include "Personaj.h"
-#include "Entitate.h"
+#include "../headers/Personaj.h"
+#include "../headers/Entitate.h"
 #include <iostream>
 
 

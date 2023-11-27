@@ -1,10 +1,9 @@
-#include "Locatie.h"
+#include "../headers/Locatie.h"
 
 Locatie::Locatie(const std::string &n, const std::string &desc) : Entitate(), nume(n), descriere(desc) {}
 
-Locatie::Locatie(const Locatie &other) : Entitate(other), nume(other.nume), descriere(other.descriere) {
-    provocariLocatie = other.provocariLocatie;
-}
+Locatie::Locatie(const Locatie &other)
+        : Entitate(other), nume(other.nume), descriere(other.descriere), provocariLocatie(other.provocariLocatie) {}
 
 Locatie &Locatie::operator=(const Locatie &other) {
     if (this == &other) {
@@ -16,6 +15,7 @@ Locatie &Locatie::operator=(const Locatie &other) {
     provocariLocatie = other.provocariLocatie;
     return *this;
 }
+
 
 Locatie::~Locatie() = default;
 

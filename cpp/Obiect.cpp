@@ -1,4 +1,4 @@
-#include "Obiect.h"
+#include "../headers/Obiect.h"
 #include <iostream>
 
 Obiect::Obiect(const std::string &nume) : Entitate(), nume(nume), folosit(false) {}

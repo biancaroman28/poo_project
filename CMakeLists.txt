@@ -91,16 +91,16 @@ endfunction()
 
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${PROJECT_NAME} main.cpp
-        Personaj.cpp
-        Personaj.h
-        Obiect.cpp
-        Obiect.h
-        Locatie.cpp
-        Locatie.h
-        Joc.cpp
-        Joc.h
-        Entitate.h
-        MyExceptions.h)
+        cpp/Personaj.cpp
+        headers/Personaj.h
+        cpp/Obiect.cpp
+        headers/Obiect.h
+        cpp/Locatie.cpp
+        headers/Locatie.h
+        cpp/Joc.cpp
+        headers/Joc.h
+        headers/Entitate.h
+        headers/MyExceptions.h)
 
 ###############################################################################
 
