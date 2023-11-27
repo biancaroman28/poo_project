@@ -9,7 +9,7 @@ class Entitate {
 public:
     virtual ~Entitate() = default;
 
-    [[nodiscard]] virtual std::unique_ptr<Entitate> clone() const = 0;
+///    [[nodiscard]] virtual std::unique_ptr<Entitate> clone() const = 0;
 
     virtual void afiseazaDetalii() const = 0;
 
