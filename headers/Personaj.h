@@ -17,7 +17,7 @@ public:
 
     [[nodiscard]] const std::string &getNume() const;
 
-    [[nodiscard]] std::unique_ptr<Entitate> clone() const override;
+  ///  [[nodiscard]] std::unique_ptr<Entitate> clone() const override;
 
     void afiseazaDetalii() const override;
 

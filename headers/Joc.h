@@ -25,33 +25,19 @@ private:
 
 public:
     Joc();
-
-    [[nodiscard]] const std::vector<std::unique_ptr<Obiect>> &getObiecte() const;
-
-    [[nodiscard]] const std::vector<std::unique_ptr<Personaj>> &getPersonaje() const;
-
-    [[nodiscard]] const std::vector<std::unique_ptr<Locatie>> &getLocatii() const;
-
+    [[nodiscard]] const std::vector<std::unique_ptr<Obiect>>& getObiecte() const;
+    [[nodiscard]] const std::vector<std::unique_ptr<Personaj>>& getPersonaje() const;
+    [[nodiscard]] const std::vector<std::unique_ptr<Locatie>>& getLocatii() const;
     void scrieLocatii();
-
     void exploreazaLocatie(const std::string &locatie);
-
     const std::string &getLocatieDescriere(const std::string &locatie);
-
     void scriePersonajeInLocatie(const std::string &locatie);
-
     void scrieProvocariInLocatie(const std::string &locatie);
-
     std::unique_ptr<Obiect> iaObiect(const std::string &objectnume);
-
     static int genereazaSanatate();
-
     static int genereazaEnergie();
-
     static void reducereViata();
-
     void salveazaStareJoc();
-
     void afiseazaIstoric();
 
 };

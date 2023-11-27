@@ -47,8 +47,9 @@ void Locatie::afiseazaDetalii() const {
     }
     std::cout << std::endl;
 }
-
+/*
 // Implementare a metodei clone pentru a evita eroarea
 std::unique_ptr<Entitate> Locatie::clone() const {
     return std::make_unique<Locatie>(*this);
 }
+*/

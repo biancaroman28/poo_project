@@ -31,7 +31,7 @@ Joc::Joc() {
 
 void Joc::scrieLocatii() {
     std::cout << "Locatii disponibile: ";
-    for (const auto &locatie: locatii) {
+    for (const auto &locatie : locatii) {
         std::cout << locatie->getNume() << " ";
     }
     std::cout << std::endl;
@@ -50,7 +50,7 @@ void Joc::exploreazaLocatie(const std::string &locatie) {
 }
 
 const std::string &Joc::getLocatieDescriere(const std::string &locatie) {
-    for (const auto &loc: locatii) {
+    for (const auto &loc : locatii) {
         if (loc->getNume() == locatie) {
             return loc->getDescriere();
         }
@@ -62,7 +62,7 @@ const std::string &Joc::getLocatieDescriere(const std::string &locatie) {
 void Joc::scriePersonajeInLocatie(const std::string &locatie) {
     std::cout << "Personaje in " << locatie << ": ";
     const auto &personajeInLocatie = personajeInLocatii[locatie];
-    for (const auto &personaj: personajeInLocatie) {
+    for (const auto &personaj : personajeInLocatie) {
         std::cout << personaj.getNume() << " ";
     }
     std::cout << std::endl;
@@ -71,7 +71,7 @@ void Joc::scriePersonajeInLocatie(const std::string &locatie) {
 void Joc::scrieProvocariInLocatie(const std::string &locatie) {
     std::cout << "Provocari in " << locatie << ": ";
     const auto &provocariInLocatie = provocariInLocatii[locatie];
-    for (const auto &provocare: provocariInLocatie) {
+    for (const auto &provocare : provocariInLocatie) {
         std::cout << provocare << " ";
     }
     std::cout << std::endl;
@@ -91,15 +91,15 @@ std::unique_ptr<Obiect> Joc::iaObiect(const std::string &objectnume) {
 }
 
 
-const std::vector<std::unique_ptr<Obiect>> &Joc::getObiecte() const {
+const std::vector<std::unique_ptr<Obiect>>& Joc::getObiecte() const {
     return obiecte;
 }
 
-const std::vector<std::unique_ptr<Locatie>> &Joc::getLocatii() const {
+const std::vector<std::unique_ptr<Locatie>>& Joc::getLocatii() const {
     return locatii;
 }
 
-const std::vector<std::unique_ptr<Personaj>> &Joc::getPersonaje() const {
+const std::vector<std::unique_ptr<Personaj>>& Joc::getPersonaje() const {
     return personaje;
 }
 int Joc::numarVieti = 3; // Inițializarea numărului de vieți
@@ -123,17 +123,17 @@ void Joc::reducereViata() {
 
 void Joc::salveazaStareJoc() {
     istoricLocatii.clear();
-    for (const auto &locatie: locatii) {
+    for (const auto &locatie : locatii) {
         istoricLocatii.emplace_back(new Locatie(*locatie));
     }
 
     istoricPersonaje.clear();
-    for (const auto &personaj: personaje) {
+    for (const auto &personaj : personaje) {
         istoricPersonaje.emplace_back(new Personaj(*personaj));
     }
 
     istoricObiecte.clear();
-    for (const auto &obiect: obiecte) {
+    for (const auto &obiect : obiecte) {
         if (obiect->aFostFolosit()) {
             istoricObiecte.emplace_back(new Obiect(*obiect));
         }
@@ -146,17 +146,17 @@ void Joc::afiseazaIstoric() {
     std::cout << "\n--- Istoricul Jocului ---\n";
 
     std::cout << "Istoric Locatii:\n";
-    for (const auto &locatie: istoricLocatii) {
+    for (const auto &locatie : istoricLocatii) {
         locatie->afiseazaDetalii();
     }
 
     std::cout << "\nIstoric Personaje:\n";
-    for (const auto &personaj: istoricPersonaje) {
+    for (const auto &personaj : istoricPersonaje) {
         personaj->afiseazaDetalii();
     }
 
     std::cout << "\nIstoric Obiecte Folosite:\n";
-    for (const auto &obiect: istoricObiecte) {
+    for (const auto &obiect : istoricObiecte) {
         obiect->afiseazaDetalii();
     }
 }

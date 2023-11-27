@@ -19,9 +19,9 @@ public:
     Obiect(const Obiect &other);
 
     Obiect &operator=(const Obiect &other);
-
+/*
     [[nodiscard]] std::unique_ptr<Entitate> clone() const override;
-
+*/
     void afiseazaDetalii() const override;
 
     void afiseazaStarea() const;

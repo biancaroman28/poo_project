@@ -24,7 +24,7 @@ public:
 
     void afiseazaDetalii() const override;
 
-    [[nodiscard]] std::unique_ptr<Entitate> clone() const override;
+  ///  [[nodiscard]] std::unique_ptr<Entitate> clone() const override;
 
 private:
     std::string nume;

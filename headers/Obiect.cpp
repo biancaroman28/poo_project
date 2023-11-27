@@ -14,11 +14,11 @@ Obiect &Obiect::operator=(const Obiect &other) {
     folosit = other.folosit;
     return *this;
 }
-
+/*
 std::unique_ptr<Entitate> Obiect::clone() const {
     return std::make_unique<Obiect>(*this);
 }
-
+*/
 void Obiect::afiseazaDetalii() const {
     std::cout << "Detalii despre obiectul '" << nume << "':" <<
               std::endl;
