@@ -15,11 +15,11 @@ Personaj &Personaj::operator=(const Personaj &other) {
     nume = other.nume;
     return *this;
 }
-
+/*
 std::unique_ptr<Entitate> Personaj::clone() const {
     return std::make_unique<Personaj>(*this);
 }
-
+*/
 void Personaj::afiseazaDetalii() const {
     std::cout << "Detalii despre personajul '" << nume << "':" << std::endl;
     std::cout << "Nume personaj: " << nume << std::endl;
