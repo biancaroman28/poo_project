@@ -11,25 +11,26 @@ int main() {
     std::cout << "Bun venit in aventura noastra!\n\n";
 
     std::cout << "Detalii despre obiecte:" << std::endl;
-    for (const auto &obiect : joc.getObiecte()) {
+    for (const auto &obiect: joc.getObiecte()) {
         obiect->afiseazaDetalii();
         std::cout << std::endl;
     }
 
     std::cout << "Detalii despre personaje:" << std::endl;
-    for (const auto &personaj : joc.getPersonaje()) {
+    for (const auto &personaj: joc.getPersonaje()) {
         personaj->afiseazaDetalii();
         std::cout << std::endl;
     }
 
     std::cout << "Detalii despre locatii:" << std::endl;
-    for (const auto &locatie : joc.getLocatii()) {
+    for (const auto &locatie: joc.getLocatii()) {
         locatie->afiseazaDetalii();
         std::cout << std::endl;
     }
 
     while (true) {
-        std::cout << "\nIntrodu o comanda ('locatii', 'exploreaza', 'iesi', 'stare', 'intoarcere', 'energie', 'sanatate'): ";
+        std::cout
+                << "\nIntrodu o comanda ('locatii', 'exploreaza', 'iesi', 'stare', 'intoarcere', 'energie', 'sanatate'): ";
         std::string comanda;
         std::cin >> comanda;
 
@@ -64,29 +65,23 @@ int main() {
                     std::cout << "Exceptie: " << ex.what() << std::endl;
                 }
             }
-        }
-        else if (comanda == "stare") {
+        } else if (comanda == "stare") {
             std::cout << "Starea obiectelor:\n";
-            for (const auto &obiect : joc.getObiecte()) {
+            for (const auto &obiect: joc.getObiecte()) {
                 obiect->afiseazaStarea();
             }
-        }
-        else if (comanda == "intoarcere") {
+        } else if (comanda == "intoarcere") {
             Joc::reducereViata();
             joc.salveazaStareJoc();
             joc.afiseazaIstoric();
-        }
-        else if (comanda == "energie") {
+        } else if (comanda == "energie") {
             std::cout << "Energia: " << Joc::genereazaEnergie() << std::endl;
-        }
-        else if (comanda == "sanatate") {
+        } else if (comanda == "sanatate") {
             std::cout << "Sanatatea: " << Joc::genereazaSanatate() << std::endl;
-        }
-        else if (comanda == "iesi") {
+        } else if (comanda == "iesi") {
             std::cout << "Ai iesit din joc.\n";
             break;
-        }
-        else {
+        } else {
             std::cout << "Comanda invalida. Incearca din nou.\n";
         }
     }

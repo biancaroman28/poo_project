@@ -6,10 +6,11 @@
 
 class MyException : public std::exception {
 public:
-    [[nodiscard]] const char* what() const noexcept override {
+    [[nodiscard]] const char *what() const noexcept override {
         return "Exceptie generica in joc.";
     }
 };
+
 /*
 class ObiectFolositException : public MyException {
 public:
@@ -20,7 +21,7 @@ public:
 */
 class ObiectNegasitException : public MyException {
 public:
-    [[nodiscard]] const char* what() const noexcept override {
+    [[nodiscard]] const char *what() const noexcept override {
         return "Obiectul nu a putut fi gasit.";
     }
 };

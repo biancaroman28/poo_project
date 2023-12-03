@@ -6,15 +6,24 @@
 
 class Obiect : public Entitate {
 public:
-    explicit Obiect(const std::string& nume);
-    ~Obiect() override =default;
-    [[nodiscard]] const std::string& getNume() const;
+    explicit Obiect(const std::string &nume);
+
+    ~Obiect() override = default;
+
+    [[nodiscard]] const std::string &getNume() const;
+
     void obiectFolosit();
+
     [[nodiscard]] bool aFostFolosit() const;
-    Obiect(const Obiect& other);
-    Obiect& operator=(const Obiect& other);
+
+    Obiect(const Obiect &other);
+
+    Obiect &operator=(const Obiect &other);
+/*
     [[nodiscard]] std::unique_ptr<Entitate> clone() const override;
+*/
     void afiseazaDetalii() const override;
+
     void afiseazaStarea() const;
 
 private:

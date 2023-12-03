@@ -13,4 +13,10 @@ add_executable(tema_poo main.cpp
         Joc.cpp
         Joc.h
         Entitate.h
-        MyExceptions.h)
+        MyExceptions.h
+        poo_project/Joc.cpp
+        poo_project/Locatie.cpp
+        poo_project/main.cpp
+        poo_project/Obiect.cpp
+        poo_project/Personaj.cpp
+        poo_project/class.cpp)
