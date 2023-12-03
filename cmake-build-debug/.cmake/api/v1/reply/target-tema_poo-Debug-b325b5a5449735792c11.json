@@ -62,7 +62,8 @@
 				13,
 				14,
 				15,
-				16
+				16,
+				17
 			]
 		}
 	],
@@ -109,7 +110,8 @@
 				13,
 				14,
 				15,
-				16
+				16,
+				17
 			]
 		},
 		{
@@ -121,7 +123,8 @@
 				6,
 				8,
 				9,
-				10
+				10,
+				18
 			]
 		}
 	],
@@ -222,6 +225,17 @@
 			"compileGroupIndex" : 0,
 			"path" : "poo_project/class.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "clasa.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "clasa.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

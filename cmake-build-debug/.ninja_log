@@ -5,8 +5,12 @@
 972	2649	7227939344280379	CMakeFiles/tema_poo.dir/poo_project/Joc.cpp.obj	571a983e12dd2e7a
 9	971	7227939327481023	CMakeFiles/tema_poo.dir/Personaj.cpp.obj	d98498e2a35459e3
 3	1517	7227939332936427	CMakeFiles/tema_poo.dir/main.cpp.obj	959e3990d88d6737
-1	185	7233323128777399	build.ninja	e17f047926dda476
+1	185	7233379941279302	build.ninja	e17f047926dda476
 40	1617	7227939333963671	CMakeFiles/tema_poo.dir/poo_project/main.cpp.obj	8786806c1fdfcd8b
 29	1016	7227939327949767	CMakeFiles/tema_poo.dir/Obiect.cpp.obj	efb4cd13ede94ca5
 1162	2107	7227939338880522	CMakeFiles/tema_poo.dir/Locatie.cpp.obj	410cd4adbc94bc22
 14	2158	7227939339359230	CMakeFiles/tema_poo.dir/Joc.cpp.obj	6683ea1cef971e3f
+28	1698	7233384765409731	CMakeFiles/tema_poo.dir/Locatie.cpp.obj	410cd4adbc94bc22
+54	1931	7233384767734257	CMakeFiles/tema_poo.dir/poo_project/main.cpp.obj	8786806c1fdfcd8b
+62	248	7233384887480740	CMakeFiles/tema_poo.dir/poo_project/class.cpp.obj	434681df1c1b62b0
+138	272	7233384887739846	CMakeFiles/tema_poo.dir/clasa.cpp.obj	f726f993808a32e5

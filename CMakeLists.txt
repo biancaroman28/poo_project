@@ -19,4 +19,6 @@ add_executable(tema_poo main.cpp
         poo_project/main.cpp
         poo_project/Obiect.cpp
         poo_project/Personaj.cpp
-        poo_project/class.cpp)
+        poo_project/class.cpp
+        clasa.cpp
+        clasa.h)

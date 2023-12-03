@@ -115,6 +115,12 @@ build CMakeFiles/tema_poo.dir/poo_project/class.cpp.obj: CXX_COMPILER__tema_poo_
   OBJECT_DIR = CMakeFiles\tema_poo.dir
   OBJECT_FILE_DIR = CMakeFiles\tema_poo.dir\poo_project
 
+build CMakeFiles/tema_poo.dir/clasa.cpp.obj: CXX_COMPILER__tema_poo_unscanned_Debug C$:/Users/win10/CLionProjects/tema_poo/clasa.cpp || cmake_object_order_depends_target_tema_poo
+  DEP_FILE = CMakeFiles\tema_poo.dir\clasa.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\tema_poo.dir
+  OBJECT_FILE_DIR = CMakeFiles\tema_poo.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target tema_poo
@@ -123,7 +129,7 @@ build CMakeFiles/tema_poo.dir/poo_project/class.cpp.obj: CXX_COMPILER__tema_poo_
 #############################################
 # Link the executable tema_poo.exe
 
-build tema_poo.exe: CXX_EXECUTABLE_LINKER__tema_poo_Debug CMakeFiles/tema_poo.dir/main.cpp.obj CMakeFiles/tema_poo.dir/Personaj.cpp.obj CMakeFiles/tema_poo.dir/Obiect.cpp.obj CMakeFiles/tema_poo.dir/Locatie.cpp.obj CMakeFiles/tema_poo.dir/Joc.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Joc.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Locatie.cpp.obj CMakeFiles/tema_poo.dir/poo_project/main.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Obiect.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Personaj.cpp.obj CMakeFiles/tema_poo.dir/poo_project/class.cpp.obj
+build tema_poo.exe: CXX_EXECUTABLE_LINKER__tema_poo_Debug CMakeFiles/tema_poo.dir/main.cpp.obj CMakeFiles/tema_poo.dir/Personaj.cpp.obj CMakeFiles/tema_poo.dir/Obiect.cpp.obj CMakeFiles/tema_poo.dir/Locatie.cpp.obj CMakeFiles/tema_poo.dir/Joc.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Joc.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Locatie.cpp.obj CMakeFiles/tema_poo.dir/poo_project/main.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Obiect.cpp.obj CMakeFiles/tema_poo.dir/poo_project/Personaj.cpp.obj CMakeFiles/tema_poo.dir/poo_project/class.cpp.obj CMakeFiles/tema_poo.dir/clasa.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\tema_poo.dir
