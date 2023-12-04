@@ -21,21 +21,17 @@ private:
     std::vector<std::unique_ptr<Location>> locationHistory;
     std::vector<std::unique_ptr<Character>> characterHistory;
     std::vector<std::unique_ptr<Object>> objectHistory;
-    // static std::unique_ptr<Character> convertToCharacter(std::unique_ptr<Entity>& entity);
 
 public:
     Game();
     [[nodiscard]] const std::vector<std::unique_ptr<Object>>& getObjects() const;
-    ///[[nodiscard]] const std::vector<std::unique_ptr<Character>>& getCharacters() const;
-    ///[[nodiscard]] const std::vector<std::unique_ptr<Location>>& getLocations() const;
     void writeLocations();
     void exploreLocation(const std::string &location);
     const std::string &getLocationDescription(const std::string &location);
+    ///[[nodiscard]] const std::vector<std::string>& getLocationChallenges(const std::string& location) const;
     void writeCharactersInLocation(const std::string &location);
     void writeChallengesInLocation(const std::string &location);
     std::unique_ptr<Object> takeObject(const std::string &objectName);
-    ///static int generateHealth(std::mt19937& rng);
-    ///static int generateEnergy(std::mt19937& rng);
     static void reduceLife();
     void saveGameState();
     void displayHistory();

@@ -19,12 +19,10 @@ public:
 
     [[nodiscard]] const std::string &getDescription() const;
 
-    // [[nodiscard]] const std::vector<std::string>& getLocationChallenges() const;
+    ///[[nodiscard]] const std::vector<std::string>& getLocationChallenges() const;
     void addChallenge(const std::string &challenge);
 
     void displayDetails() const override;
-
-    // [[nodiscard]] std::unique_ptr<Entity> clone() const override;
 
 private:
     std::string name;

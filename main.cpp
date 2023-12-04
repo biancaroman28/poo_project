@@ -3,14 +3,26 @@
 #include <random>
 #include "headers/Game.h"
 
-// Hash function implementation (replace with your hash function)
-constexpr unsigned int hash(const char* str) {
-    unsigned int hash = 0;
-    while (*str) {
-        hash += static_cast<unsigned int>(*str);
-        ++str;
-    }
-    return hash;
+enum Command {
+    LOCATIONS,
+    EXPLORE,
+    STATUS,
+    RETURN,
+    ENERGY,
+    HEALTH,
+    EXIT,
+    INVALID
+};
+
+Command getCommand(const std::string& command) {
+    if (command == "locations") return LOCATIONS;
+    if (command == "explore") return EXPLORE;
+    if (command == "status") return STATUS;
+    if (command == "return") return RETURN;
+    if (command == "energy") return ENERGY;
+    if (command == "health") return HEALTH;
+    if (command == "exit") return EXIT;
+    return INVALID;
 }
 
 int main() {
@@ -23,20 +35,20 @@ int main() {
     std::cout << "Welcome to our adventure!\n\n";
 
     bool ok = true;
-    const int maxAttempts = 3; // Limit attempts for invalid input
+    const int maxAttempts = 3;
     int attempts = 0;
 
     do {
         std::cout << "\nEnter a command ('locations', 'explore', 'exit', 'status', 'return', 'energy', 'health'): ";
-        std::string command;
-        std::cin >> command;
-
-        switch(hash(command.c_str())) {
-            case hash("locations"): {
+        std::string input;
+        std::cin >> input;
+        Command command = getCommand(input);
+        switch(command) {
+            case LOCATIONS: {
                 game.writeLocations();
                 break;
             }
-            case hash("explore"): {
+            case EXPLORE: {
                 std::cout << "Choose a location to explore: ";
                 std::string location;
                 std::cin >> location;
@@ -66,29 +78,29 @@ int main() {
                 }
                 break;
             }
-            case hash("status"): {
+            case STATUS: {
                 std::cout << "Object status:\n";
                 for (const auto &object : game.getObjects()) {
                     object->displayState();
                 }
                 break;
             }
-            case hash("return"): {
+            case RETURN: {
                 Game::reduceLife();
                 game.saveGameState();
                 game.displayHistory();
                 break;
             }
-            case hash("energy"): {
+            case ENERGY: {
                 std::cout << "Energy: " << distribution(rng) << std::endl;
                 break;
             }
-            case hash("health"): {
+            case HEALTH: {
                 std::cout << "Health: " << distribution(rng) << std::endl;
                 break;
             }
 ///
-            case hash("exit"): {
+            case EXIT: {
                 std::cout << "You have exited the game.\n";
                 ok = false;
                 break;

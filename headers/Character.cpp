@@ -15,12 +15,6 @@ Character &Character::operator=(const Character &other) {
     return *this;
 }
 
-/*
-std::unique_ptr<Entity> Character::clone() const {
-    return std::make_unique<Character>(*this);
-}
-*/
-
 void Character::displayDetails() const {
     std::cout << "Details about the character '" << name << "':" << std::endl;
     std::cout << "Character name: " << name << std::endl;

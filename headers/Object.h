@@ -19,9 +19,6 @@ public:
     Object(const Object &other);
 
     Object &operator=(const Object &other);
-    /*
-    [[nodiscard]] std::unique_ptr<Entity> clone() const override;
-    */
 
     void displayDetails() const override;
 

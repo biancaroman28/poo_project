@@ -15,12 +15,6 @@ Object &Object::operator=(const Object &other) {
     return *this;
 }
 
-/*
-std::unique_ptr<Entity> Object::clone() const {
-    return std::make_unique<Object>(*this);
-}
-*/
-
 void Object::displayDetails() const {
     std::cout << "Details about the object '" << name << "':" << std::endl;
     std::cout << "Object name: " << name << std::endl;
