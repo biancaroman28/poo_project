@@ -28,9 +28,9 @@ int main() {
         std::cout << std::endl;
     }
 
-    bool ok = true;
+    bool ok;
 
-    while (ok) {
+    do {
         std::cout << "\nEnter a command ('locations', 'explore', 'exit', 'status', 'return', 'energy', 'health'): ";
         std::string command;
         std::cin >> command;
@@ -84,7 +84,7 @@ int main() {
         } else {
             std::cout << "Invalid command. Please try again.\n";
         }
-    }
+    } while (ok);
 
     return 0;
 }
