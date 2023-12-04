@@ -7,22 +7,22 @@
 class MyException : public std::exception {
 public:
     [[nodiscard]] const char *what() const noexcept override {
-        return "Exceptie generica in joc.";
+        return "Generic exception in the game.";
     }
 };
 
 /*
-class ObiectFolositException : public MyException {
+class ObjectUsedException : public MyException {
 public:
     [[nodiscard]] const char* what() const noexcept override {
-        return "Obiectul a fost deja folosit.";
+        return "The object has already been used.";
     }
 };
 */
-class ObiectNegasitException : public MyException {
+class ObjectNotFoundException : public MyException {
 public:
     [[nodiscard]] const char *what() const noexcept override {
-        return "Obiectul nu a putut fi gasit.";
+        return "The object could not be found.";
     }
 };
 
