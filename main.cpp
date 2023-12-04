@@ -87,7 +87,7 @@ int main() {
                 std::cout << "Health: " << distribution(rng) << std::endl;
                 break;
             }
-
+///
             case hash("exit"): {
                 std::cout << "You have exited the game.\n";
                 ok = false;

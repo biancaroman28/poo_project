@@ -85,7 +85,7 @@ std::unique_ptr<Object> Game::takeObject(const std::string &objectName) {
 const std::vector<std::unique_ptr<Object>>& Game::getObjects() const {
     return objects;
 }
-
+/*
 const std::vector<std::unique_ptr<Location>>& Game::getLocations() const {
     return locations;
 }
@@ -93,17 +93,19 @@ const std::vector<std::unique_ptr<Location>>& Game::getLocations() const {
 const std::vector<std::unique_ptr<Character>>& Game::getCharacters() const {
     return characters;
 }
-
+*/
 int Game::lives = 3;
-
-int Game::generateHealth() {
-    return rand() % 101;
+/*
+int Game::generateHealth(std::mt19937& rng) {
+    std::uniform_int_distribution<int> distribution(0, 100);
+    return distribution(rng);
 }
 
-int Game::generateEnergy() {
-    return rand() % 101;
+int Game::generateEnergy(std::mt19937& rng) {
+    std::uniform_int_distribution<int> distribution(0, 100);
+    return distribution(rng);
 }
-
+*/
 void Game::reduceLife() {
     if (lives > 0) {
         lives--;
