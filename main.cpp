@@ -28,8 +28,7 @@ int main() {
         std::cout << std::endl;
     }
 
-    bool ok;
-///
+    bool ok=true;
     do {
         std::cout << "\nEnter a command ('locations', 'explore', 'exit', 'status', 'return', 'energy', 'health'): ";
         std::string command;
