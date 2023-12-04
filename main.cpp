@@ -66,7 +66,27 @@ int main() {
                 }
                 break;
             }
-                // Other cases (status, return, energy, health, exit) remain the same...
+            case hash("status"): {
+                std::cout << "Object status:\n";
+                for (const auto &object : game.getObjects()) {
+                    object->displayState();
+                }
+                break;
+            }
+            case hash("return"): {
+                Game::reduceLife();
+                game.saveGameState();
+                game.displayHistory();
+                break;
+            }
+            case hash("energy"): {
+                std::cout << "Energy: " << distribution(rng) << std::endl;
+                break;
+            }
+            case hash("health"): {
+                std::cout << "Health: " << distribution(rng) << std::endl;
+                break;
+            }
 
             case hash("exit"): {
                 std::cout << "You have exited the game.\n";
