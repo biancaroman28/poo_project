@@ -1,10 +1,12 @@
 #include <iostream>
-#include <ctime> // For srand
-
+#include <memory>
+#include <random>
 #include "headers/Game.h"
 
 int main() {
-    srand(static_cast<unsigned int>(time(nullptr))); // Initialize random number generator
+    std::random_device rd;
+    std::mt19937 rng(rd()); // Mersenne Twister PRNG
+    std::uniform_int_distribution<int> distribution(1, 100); // Random numbers between 1 and 100
 
     Game game;
 
@@ -28,7 +30,7 @@ int main() {
         std::cout << std::endl;
     }
 
-    bool ok=true;
+    bool ok = true;
     do {
         std::cout << "\nEnter a command ('locations', 'explore', 'exit', 'status', 'return', 'energy', 'health'): ";
         std::string command;
@@ -51,14 +53,14 @@ int main() {
 
             if (response == "yes") {
                 std::cout << "Which object do you want to take?: ";
-                std::string object;
-                std::cin >> object;
+                std::string objectName;
+                std::cin >> objectName;
 
                 try {
-                    std::unique_ptr<Object> takenObject = game.takeObject(object);
-                    std::cout << "You took " << object << ". Have fun!\n";
+                    std::shared_ptr<Object> takenObject = game.takeObject(objectName);
+                    std::cout << "You took " << objectName << ". Have fun!\n";
 
-                    std::cout << "Was the object '" << object << "' used? "
+                    std::cout << "Was the object '" << objectName << "' used? "
                               << (takenObject->hasBeenUsed() ? "Yes" : "No") << std::endl;
                 } catch (const ObjectNotFoundException &ex) {
                     std::cout << "Exception: " << ex.what() << std::endl;
