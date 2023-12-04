@@ -28,7 +28,9 @@ int main() {
         std::cout << std::endl;
     }
 
-    while (true) {
+    bool ok = true;
+
+    while (ok) {
         std::cout << "\nEnter a command ('locations', 'explore', 'exit', 'status', 'return', 'energy', 'health'): ";
         std::string command;
         std::cin >> command;
@@ -57,7 +59,6 @@ int main() {
                     std::unique_ptr<Object> takenObject = game.takeObject(object);
                     std::cout << "You took " << object << ". Have fun!\n";
 
-                    // Display if the object has been used or not
                     std::cout << "Was the object '" << object << "' used? "
                               << (takenObject->hasBeenUsed() ? "Yes" : "No") << std::endl;
                 } catch (const ObjectNotFoundException &ex) {
@@ -79,7 +80,7 @@ int main() {
             std::cout << "Health: " << Game::generateHealth() << std::endl;
         } else if (command == "exit") {
             std::cout << "You have exited the game.\n";
-            break;
+            ok = false;
         } else {
             std::cout << "Invalid command. Please try again.\n";
         }
