@@ -1,4 +1,3 @@
-#include <iostream>
 #include <memory>
 #include <random>
 #include "headers/Game.h"
@@ -37,7 +36,7 @@ int main() {
     bool ok = true;
     const int maxAttempts = 3;
     int attempts = 0;
-
+    game.interactWithLocations();
     do {
         std::cout << "\nEnter a command ('locations', 'explore', 'exit', 'status', 'return', 'energy', 'health'): ";
         std::string input;
@@ -52,10 +51,10 @@ int main() {
                 std::cout << "Choose a location to explore: ";
                 std::string location;
                 std::cin >> location;
-
-                game.exploreLocation(location);
+               /// game.exploreLocation(location);
                 game.writeChallengesInLocation(location);
                 game.writeCharactersInLocation(location);
+
 
                 std::cout << "Do you want to take an object from this location? ('yes'/'no'): ";
                 std::string response;
@@ -87,8 +86,8 @@ int main() {
             }
             case RETURN: {
                 Game::reduceLife();
-                game.saveGameState();
-                game.displayHistory();
+                ///game.saveGameState();
+                ///game.displayHistory();
                 break;
             }
             case ENERGY: {

@@ -17,7 +17,6 @@ public:
 
     [[nodiscard]] const std::string &getName() const;
 
-    // [[nodiscard]] std::unique_ptr<Entity> clone() const override;
 
     void displayDetails() const override;
 
