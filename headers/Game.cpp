@@ -35,6 +35,13 @@ Game::Game() {
     */
 }
 void Game::interactWithLocations() {
+    LocationVisitedObserver* observer = new LocationVisitedObserver(); // Create the observer
+
+    // Attach the observer to locations
+    for (const auto &location : locations) {
+        location->attachObserver(observer);
+    }
+
     // Setează atributele pentru locațiile specifice
    locations[0]->setAttributes(0, 28); // Exemplu index locație și atribute
     locations[1]->setAttributes(0, 22); // Exemplu index locație și atribute
@@ -55,10 +62,12 @@ void Game::interactWithLocations() {
     // Afișează detalii despre toate locațiile și starea de vizitare a acestora
     for (const auto &location : locations) {
         location->displayDetails();
-        std::cout << "Visited: " << (location->isVisited() ? "Da" : "Nu") << std::endl; // Verificare și afișare starea de vizitare
+        std::cout << "Visited: " << (location->isVisited() ? "Yes" : "No") << std::endl;
         std::cout << "Danger level: " << location->getDangerLevel() << std::endl;
     }
+    delete observer; // Clean up the observer object
 }
+
 
 
 void Game::writeLocations() {

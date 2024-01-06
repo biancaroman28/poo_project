@@ -72,12 +72,12 @@ template<int Attr1, int Attr2>
 const std::string& Location<Attr1, Attr2>::getName() const {
     return name;
 }
-
+/*
 template<int Attr1, int Attr2>
 const std::string& Location<Attr1, Attr2>::getDescription() const {
     return description;
 }
-
+*/
 template<int Attr1, int Attr2>
 void Location<Attr1, Attr2>::addChallenge(const std::string &challenge) {
     locationChallenges.push_back(challenge);

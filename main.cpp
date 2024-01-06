@@ -36,7 +36,7 @@ int main() {
     bool ok = true;
     const int maxAttempts = 3;
     int attempts = 0;
-    game.interactWithLocations();
+
     do {
         std::cout << "\nEnter a command ('locations', 'explore', 'exit', 'status', 'return', 'energy', 'health'): ";
         std::string input;
@@ -54,7 +54,7 @@ int main() {
                /// game.exploreLocation(location);
                 game.writeChallengesInLocation(location);
                 game.writeCharactersInLocation(location);
-
+                game.interactWithLocations();
 
                 std::cout << "Do you want to take an object from this location? ('yes'/'no'): ";
                 std::string response;
