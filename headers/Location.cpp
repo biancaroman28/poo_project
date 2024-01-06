@@ -58,7 +58,7 @@ void Location<Attr1, Attr2>::performAction() {
 
 template<int Attr1, int Attr2>
 void Location<Attr1, Attr2>::markVisited() {
-   /// visited = true;
+    visited = true;
     notifyObservers();
 }
 

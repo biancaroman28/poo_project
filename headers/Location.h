@@ -40,7 +40,7 @@ public:
     void markVisited();
     [[nodiscard]] bool isVisited() const;
     [[nodiscard]] const std::string &getName() const;
-    [[nodiscard]] const std::string &getDescription() const;
+    ///[[nodiscard]] const std::string &getDescription() const;
     void addChallenge(const std::string &challenge);
     void displayDetails() const override;
     [[nodiscard]] int getDangerLevel() const;
