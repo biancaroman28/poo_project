@@ -43,7 +43,7 @@ public:
     [[nodiscard]] const std::string &getDescription() const;
     void addChallenge(const std::string &challenge);
     void displayDetails() const override;
-    int getDangerLevel() const;
+    [[nodiscard]] int getDangerLevel() const;
     void attachObserver(LocationVisitedObserver* obs);
     void notifyObservers();
 

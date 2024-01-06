@@ -68,7 +68,7 @@ void Game::writeLocations() {
     }
     std::cout << std::endl;
 }
-
+/*
 const std::string &Game::getLocationDescription(const std::string &location) {
     for (const auto &loc : locations) {
         if (loc->getName() == location) {
@@ -78,7 +78,7 @@ const std::string &Game::getLocationDescription(const std::string &location) {
     static const std::string empty = "Unknown location.";
     return empty;
 }
-
+*/
 void Game::writeCharactersInLocation(const std::string &location) {
     std::cout << "Characters in " << location << ": ";
     const auto &charactersInLocation = charactersInLocations[location];
@@ -130,13 +130,8 @@ const std::vector<std::string>& Game::getLocationChallenges(const std::string& l
     static const std::vector<std::string> emptyChallenges;
     return emptyChallenges;
 }*/
-/*
-void Game::saveGameState() {
-    locationHistory.clear();
-    for (const auto &location : locations) {
-        locationHistory.emplace_back(new Location<0,11>(*location));
-    }
 
+void Game::saveGameState() {
     characterHistory.clear();
     for (const auto &character : characters) {
         characterHistory.emplace_back(new Character(*character));
@@ -151,7 +146,6 @@ void Game::saveGameState() {
 
     std::cout << "The game state has been saved.\n";
 }
-*/
 void Game::displayHistory() {
     std::cout << "\n--- Game History ---\n";
 
@@ -170,7 +164,7 @@ void Game::displayHistory() {
         object->displayDetails();
     }
 }
-
+/*
 int Game::getLocationIndex(const std::string &locationName) {
     auto it = locationIndexes.find(locationName);
     if (it != locationIndexes.end()) {
@@ -180,3 +174,4 @@ int Game::getLocationIndex(const std::string &locationName) {
     }
 }
 
+*/

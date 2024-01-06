@@ -114,7 +114,9 @@ int main() {
                 break;
             }
         }
-    } while (ok);
 
+    } while (ok);
+    game.saveGameState();
+    game.displayHistory();
     return 0;
 }
