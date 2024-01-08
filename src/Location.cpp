@@ -1,6 +1,5 @@
-#include "Location.h"
+#include "../headers/Location.h"
 
-// LocationState subclass implementations
 void NonDangerousLocationState::performAction()  {
     std::cout << "You are in a non-dangerous location." << std::endl;
 }
@@ -19,7 +18,6 @@ void LocationVisitedObserver::update(const Location<0, 11>* location) {
     }
 }
 
-// Location template class member function implementations
 template<int Attr1, int Attr2>
 Location<Attr1, Attr2>::Location(const std::string& name, const std::string& description, int attr1Value, int attr2Value)
         : Entity(), name(name), description(description), attr1(attr1Value), attr2(attr2Value) {}
@@ -109,6 +107,4 @@ void Location<Attr1, Attr2>::notifyObservers() {
     }
 }
 
-// Explicit instantiation for specific template arguments
 template class Location<0, 11>;
-// Add more explicit instantiations for other template arguments if needed

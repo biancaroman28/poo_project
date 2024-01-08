@@ -97,10 +97,10 @@ add_executable(${PROJECT_NAME} main.cpp
         headers/Game.h
         headers/Entity.h
         headers/MyExceptions.h
-        headers/Game.cpp
-        headers/Character.cpp
-        headers/Object.cpp
-        headers/Location.cpp)
+        src/Game.cpp
+        src/Character.cpp
+        src/Object.cpp
+        src/Location.cpp)
 
 ###############################################################################
 

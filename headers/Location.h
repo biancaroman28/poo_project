@@ -46,6 +46,7 @@ public:
     [[nodiscard]] int getDangerLevel() const;
     void attachObserver(LocationVisitedObserver* obs);
     void notifyObservers();
+
     template <typename T>
     T getAttribute() const {
         // Implementation based on type T
@@ -54,8 +55,6 @@ public:
         } else if constexpr (std::is_same_v<T, float>) {
             return Attr2;
         } else {
-            // Handle other types or throw an exception
-            // For example:
             throw std::invalid_argument("Unsupported type for getAttribute");
         }
     }

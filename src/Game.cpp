@@ -1,6 +1,6 @@
-#include "Game.h"
+#include "../headers/Game.h"
 #include <iostream>
-#include "MyExceptions.h"
+#include "../headers/MyExceptions.h"
 
 Game::Game() {
     objects.push_back(std::make_unique<Object>("Flashlight"));
@@ -29,10 +29,7 @@ Game::Game() {
     locationIndexes["Cave"] = 1;
     locationIndexes["Mountain"] = 2;
     locationIndexes["City"] = 3;
-/*
-    locations[0]->addChallenge("Forest Monster");
-    locations[1]->addChallenge("Cave Maze");
-    */
+
 }
 void Game::interactWithLocations() {
     LocationVisitedObserver* observer = new LocationVisitedObserver(); // Create the observer
@@ -40,20 +37,6 @@ void Game::interactWithLocations() {
     // Attach the observer to locations
     for (const auto &location : locations) {
         location->attachObserver(observer);
-    }
-/*
-    for (const auto &location : locations) {
-        int attr1 = location->getAttribute<int>(); // Exemplu de apel pentru Attr1 (int)
-        int attr2 = location->getAttribute<int>(); // Exemplu de apel pentru Attr2 (int)
-        // ... alte tipuri de apeluri și manipulări de tipuri de date
-    }*/
-
-    for (const auto &location : locations) {
-        int attr1 = location->getAttribute<int>(); // Example of fetching Attr1 (int)
-        int attr2 = location->getAttribute<int>(); // Example of fetching Attr2 (int)
-
-        // Using the fetched attributes (Printing them as an example)
-        std::cout << "Attribute 1: " << attr1 << ", Attribute 2: " << attr2 << std::endl;
     }
 
     // Setează atributele pentru locațiile specifice
@@ -73,13 +56,19 @@ void Game::interactWithLocations() {
     locations[0]->addChallenge("Provocare A"); // Exemplu index locație și provocare
     locations[3]->addChallenge("Provocare B"); // Exemplu index locație și provocare
 
+    for (const auto &location : locations) {
+        int attr1 = location->getAttribute<int>();
+        int attr2 = location->getAttribute<int>();
+
+        std::cout << "Attribute 1: " << attr1 << ", Attribute 2: " << attr2 << std::endl;
+    }
     // Afișează detalii despre toate locațiile și starea de vizitare a acestora
     for (const auto &location : locations) {
         location->displayDetails();
         std::cout << "Visited: " << (location->isVisited() ? "Yes" : "No") << std::endl;
         std::cout << "Danger level: " << location->getDangerLevel() << std::endl;
     }
-    delete observer; // Clean up the observer object
+    delete observer;
 }
 
 
