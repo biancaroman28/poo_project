@@ -41,6 +41,20 @@ void Game::interactWithLocations() {
     for (const auto &location : locations) {
         location->attachObserver(observer);
     }
+/*
+    for (const auto &location : locations) {
+        int attr1 = location->getAttribute<int>(); // Exemplu de apel pentru Attr1 (int)
+        int attr2 = location->getAttribute<int>(); // Exemplu de apel pentru Attr2 (int)
+        // ... alte tipuri de apeluri și manipulări de tipuri de date
+    }*/
+
+    for (const auto &location : locations) {
+        int attr1 = location->getAttribute<int>(); // Example of fetching Attr1 (int)
+        int attr2 = location->getAttribute<int>(); // Example of fetching Attr2 (int)
+
+        // Using the fetched attributes (Printing them as an example)
+        std::cout << "Attribute 1: " << attr1 << ", Attribute 2: " << attr2 << std::endl;
+    }
 
     // Setează atributele pentru locațiile specifice
    locations[0]->setAttributes(0, 28); // Exemplu index locație și atribute

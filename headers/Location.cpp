@@ -96,6 +96,7 @@ void Location<Attr1, Attr2>::displayDetails() const {
     std::cout << std::endl;
 }
 
+
 template<int Attr1, int Attr2>
 void Location<Attr1, Attr2>::attachObserver(LocationVisitedObserver* obs) {
     observers.push_back(obs);

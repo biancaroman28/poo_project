@@ -51,7 +51,6 @@ int main() {
                 std::cout << "Choose a location to explore: ";
                 std::string location;
                 std::cin >> location;
-               /// game.exploreLocation(location);
                 game.writeChallengesInLocation(location);
                 game.writeCharactersInLocation(location);
                 game.interactWithLocations();

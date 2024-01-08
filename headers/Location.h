@@ -46,6 +46,19 @@ public:
     [[nodiscard]] int getDangerLevel() const;
     void attachObserver(LocationVisitedObserver* obs);
     void notifyObservers();
+    template <typename T>
+    T getAttribute() const {
+        // Implementation based on type T
+        if constexpr (std::is_same_v<T, int>) {
+            return Attr1;
+        } else if constexpr (std::is_same_v<T, float>) {
+            return Attr2;
+        } else {
+            // Handle other types or throw an exception
+            // For example:
+            throw std::invalid_argument("Unsupported type for getAttribute");
+        }
+    }
 
 private:
     std::string name;
@@ -57,6 +70,7 @@ private:
     std::vector<LocationVisitedObserver*> observers;
     std::vector<std::string> locationChallenges;
 };
+
 
 class LocationVisitedObserver {
 public:
